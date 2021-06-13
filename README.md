@@ -36,14 +36,18 @@ To download and set up 'RemoteControlAndroidApp' application in Android Studio, 
 ## How to use?
 
 **1.** First, compile and run the RemoteControlAndroidApp like descripted above. <br/>
+
 2. On your computer open Flight Gear Application <br/>
   **2.1** Click on Setting option <br/>
   **2.2** On the Additional Setting option copy this line: --telnet=socket,in,10,127.0.0.1,6400,tcp <br/>
   **2.3** On the line you copyied, choose the port you want to run on it(now it's port: 6400 and you can replace it). <br/>
+
 **3.** Click on run option in Flight Gear application and wait for the airplane be reset on the runway. <br/>
+
 **4.** On the RemoteControlAndroidApp, choose the correct IP and PORT of your computer that run Flight gear App, <br/>
-       ofcourse use the port you write in the additional setting option in Flight Gear App.
-       And press connect.
+       ofcourse use the port you write in the additional setting option in Flight Gear App. <br/>
+       Finally, press connect. <br/>
+       
 **5.** If the connect succeeded, you will move to the joystick window and you can start to fly :) <br/>
 
 
