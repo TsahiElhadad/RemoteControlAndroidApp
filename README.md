@@ -21,8 +21,9 @@ To download and set up 'RemoteControlAndroidApp' application in Android Studio, 
 **1.** Download RemoteControlAndroidApp from GitHub: 
  * You can use one of the following two options- <br/>
    * "Download ZIP" button 
-   * CMD: git clone https://github.com/TsahiElhadad/RemoteControlAndroidApp.git <br/>
-**2.** Import the project in Android studio: <br/>
+   * CMD: git clone https://github.com/TsahiElhadad/RemoteControlAndroidApp.git
+
+2. Import the project in Android studio: <br/>
  **2.1.** Click **File** -> **New** -> **Import project** <br/>
  **2.2.** Navigate to the directory where you downloaded the RemoteControlAndroidApp repository *(usually: Users\current_user\RemoteControlAndroidApp)* <br/>
  **2.3.** Select the "RemoteControlAndroidApp" folder and click ok <br/>
