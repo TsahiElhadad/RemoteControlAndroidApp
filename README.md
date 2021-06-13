@@ -50,4 +50,8 @@ To download and set up 'RemoteControlAndroidApp' application in Android Studio, 
        
 **5.** If the connect succeeded, you will move to the joystick window and you can start to fly :) <br/>
 
+![](FirstScreenApp.png)
+![](JoystickScreenApp.png)
+
+
 
