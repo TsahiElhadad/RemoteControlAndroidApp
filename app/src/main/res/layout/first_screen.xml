@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="firstscreenviewmodel"
+            type="com.example.testproject.view_model.FirstScreenViewModel"/>
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:id="@+id/layoutID"
+        tools:context=".view.MainActivity"
+        android:background="@drawable/image1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WELCOME!"
+            android:gravity="center"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:textColor="@color/cardview_dark_background"
+            android:layout_marginTop="80dp"
+            >
+        </TextView>
+
+        <EditText
+            android:id="@+id/IP_ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:hint="IP"
+            android:gravity="center"
+            android:inputType="text"
+            android:textSize="30sp"
+            android:maxLength="20"
+            android:text="@={firstscreenviewmodel.iP}"
+            android:background="@color/teal_700"/>
+
+        <EditText
+            android:id="@+id/PORT_ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="PORT"
+            android:gravity="center"
+            android:inputType="text"
+            android:textSize="30sp"
+            android:maxLength="10"
+            android:text="@={firstscreenviewmodel.pORT}"
+            android:background="@color/teal_700"/>
+
+        <Button
+            android:id="@+id/connectButton"
+            android:layout_width="250dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="connect"
+            android:textSize="22sp"
+            android:textColor="@color/LimeGreen"
+            android:backgroundTint="@color/purple_500"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

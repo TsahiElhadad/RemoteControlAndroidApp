@@ -12,9 +12,6 @@
             name="loginviewmodel"
             type="com.example.testproject.view_model.MainViewModel"/>
 
-        <variable
-            name="Joystick"
-            type="com.example.testproject.view.Joystick"/>
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -23,70 +20,46 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:id="@+id/layoutID"
-        tools:context=".view.MainActivity">
-
-        <EditText
-            android:id="@+id/IP_ID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="IP"
-            android:inputType="text"
-            android:maxLength="20"
-            android:text="@={loginviewmodel.iP}" />
-
-        <EditText
-            android:id="@+id/PORT_ID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="PORT"
-            android:inputType="text"
-            android:maxLength="6"
-            android:text="@={loginviewmodel.pORT}" />
-
-        <Button
-            android:id="@+id/connectButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="connect" />
+        tools:context=".view.MainActivity"
+        android:background="@drawable/image3">
 
 
         <FrameLayout
             android:layout_width="32dp"
-            android:layout_height="420dp">
+            android:layout_height="352sp"
+            android:layout_marginTop="50sp">
 
             <SeekBar
-                android:layout_width="352dp"
+                android:layout_width="352sp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginBottom="40dp"
                 android:layout_marginTop="40dp"
                 android:rotation="270"
                 android:id="@+id/throttleSeekBar"
-                android:max="10000"/>
+                android:max="10000"
+                android:background="@color/teal_700"/>
         </FrameLayout>
 
         <com.example.testproject.view.Joystick
             android:id="@+id/myJoystickID"
-            android:layout_width="match_parent"
-            android:layout_height="439dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="-420dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="-340dp"
             android:layout_marginBottom="-20dp"
-            android:background="@color/white">
+            android:background="@color/transparent">
         </com.example.testproject.view.Joystick>
 
         <SeekBar
             android:id="@+id/rudderSeekBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:max="20000"
-            android:layout_marginTop="-20dp"
-            android:progress="10000">
-
+            android:layout_marginTop="100dp"
+            android:progress="10000"
+            android:background="@color/teal_700">
         </SeekBar>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

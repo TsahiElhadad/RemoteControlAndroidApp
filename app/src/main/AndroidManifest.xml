@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestProject">
-<!--        <activity android:name=".view.Joystick"></activity>-->
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.MainActivity"></activity>
+        <activity android:name=".view.FirstScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
