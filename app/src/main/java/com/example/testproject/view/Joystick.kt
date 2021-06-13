@@ -10,26 +10,38 @@ import kotlin.math.*
 
 class Joystick @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : View(context, attrs, defStyle) {
 
-    var centerX: Float = 0.0f
-    var bigCenterX: Float = 0.0f
-    var centerY: Float = 0.0f
-    var bigCenterY: Float = 0.0f
-    var radius: Float = 0.0f
-    var bigRadius: Float = 0.0f
-    var largeRadius: Float = 0.0f
-    lateinit var a1 : PointF
-    lateinit var a2 : PointF
-    lateinit var a3 : PointF
-    lateinit var a4 : PointF
-    lateinit var b1 : PointF
-    lateinit var b2 : PointF
-    lateinit var b3 : PointF
-    lateinit var b4 : PointF
-    lateinit var c1 : PointF
-    lateinit var c2 : PointF
-    lateinit var c3 : PointF
-    lateinit var c4 : PointF
-    var isAlreadyClicked : Boolean = false
+    private var centerX: Float = 0.0f
+    private var bigCenterX: Float = 0.0f
+    private var centerY: Float = 0.0f
+    private var bigCenterY: Float = 0.0f
+    private var radius: Float = 0.0f
+    private var bigRadius: Float = 0.0f
+    private var largeRadius: Float = 0.0f
+    private lateinit var a1 : PointF
+    private lateinit var a2 : PointF
+    private lateinit var a3 : PointF
+    private lateinit var a4 : PointF
+    private lateinit var b1 : PointF
+    private lateinit var b2 : PointF
+    private lateinit var b3 : PointF
+    private lateinit var b4 : PointF
+    private lateinit var c1 : PointF
+    private lateinit var c2 : PointF
+    private lateinit var c3 : PointF
+    private lateinit var c4 : PointF
+    private var isAlreadyClicked : Boolean = false
+
+    fun getCenterX() : Float {
+        return centerX
+    }
+
+    fun getCenterY() : Float {
+        return centerY
+    }
+
+    fun getBigRadius() : Float {
+        return bigRadius
+    }
 
     private val paintSmallCircle = Paint().apply {
         style = Paint.Style.FILL_AND_STROKE
@@ -135,58 +147,17 @@ class Joystick @JvmOverloads constructor(context: Context, attrs: AttributeSet? 
         return true
     }
 
-    fun move(x: Float, y: Float) {
+    private fun move(x: Float, y: Float) {
         isAlreadyClicked = true
         centerX = x;
         centerY = y;
         invalidate()
     }
 
-    fun returnToCenter() {
+    private fun returnToCenter() {
         isAlreadyClicked = false
         centerX = bigCenterX;
         centerY = bigCenterY;
         invalidate()
     }
 }
-
-
-
-
-
-//    fun getAngle(x: Float, y: Float) : Float{
-//        var angle = Math.toDegrees(Math.atan2((bigCenterY - y).toDouble(),(x - bigCenterX).toDouble()))
-//        if(angle < 0){
-//            angle += 360;
-//        }
-//        return angle.toFloat();
-//    }
-
-//    private val paint = Paint().apply {
-//        println("paint!!!!!!!!!!!!!!!!!!!")
-//        style = Paint.Style.STROKE
-//        color = Color.BLACK
-//        isAntiAlias = true
-//    }
-//
-//    private var radius: Float = 100f
-//    private var center: PointF = PointF()
-//
-//    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-////        super.onSizeChanged(w, h, oldw, oldh)
-//        println("111111111111111")
-//    }
-//
-//
-//    override fun onDraw(canvas: Canvas) {
-//        center.x = 5.0f
-//        center.y = 5.0f
-//        println("draw!!!!!!!!!!!!!!!!!!!")
-//        super.onDraw(canvas)
-//        canvas.drawCircle(center.x, center.y, radius, paint)
-//    }
-//
-//    override fun onTouchEvent(event: MotionEvent?): Boolean {
-//        println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-//        return super.onTouchEvent(event)
-//    }

@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp"
         android:id="@+id/layoutID"
         tools:context=".view.MainActivity"
         android:background="@drawable/image1">
@@ -27,8 +26,7 @@
             android:textSize="50sp"
             android:textStyle="bold"
             android:textColor="@color/cardview_dark_background"
-            android:layout_marginTop="80dp"
-            >
+            android:layout_marginTop="80dp">
         </TextView>
 
         <EditText

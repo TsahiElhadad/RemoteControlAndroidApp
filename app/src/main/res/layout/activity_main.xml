@@ -5,9 +5,7 @@
 
 
     <data>
-
         <import type="android.view.View"/>
-
         <variable
             name="loginviewmodel"
             type="com.example.testproject.view_model.MainViewModel"/>
@@ -18,35 +16,53 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:padding="7dp"
         android:id="@+id/layoutID"
         tools:context=".view.MainActivity"
-        android:background="@drawable/image3">
+        android:background="@drawable/image6">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remote Control"
+            android:scaleY="2.5"
+            android:gravity="center"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="50dp"
+            >
+        </TextView>
 
 
         <FrameLayout
-            android:layout_width="32dp"
-            android:layout_height="352sp"
-            android:layout_marginTop="50sp">
+            android:layout_width="65dp"
+            android:layout_height="358sp"
+            android:layout_marginTop="30sp">
 
             <SeekBar
-                android:layout_width="352sp"
-                android:layout_height="match_parent"
+                android:scaleX="2.8"
+                android:scaleY="2.8"
+                android:layout_width="136dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="40dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginStart="2dp"
                 android:rotation="270"
+                android:thumbTint="@color/red"
+                android:progressBackgroundTintMode="add"
+                android:progressTint="@color/red"
                 android:id="@+id/throttleSeekBar"
-                android:max="10000"
-                android:background="@color/teal_700"/>
+                android:max="10000" />
         </FrameLayout>
 
         <com.example.testproject.view.Joystick
             android:id="@+id/myJoystickID"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="67dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="73dp"
             android:layout_marginTop="-340dp"
             android:layout_marginBottom="-20dp"
             android:background="@color/transparent">
@@ -54,12 +70,19 @@
 
         <SeekBar
             android:id="@+id/rudderSeekBar"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="30dp"
             android:max="20000"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="82dp"
+            android:layout_gravity="center"
             android:progress="10000"
-            android:background="@color/teal_700">
+            android:scaleX="2.8"
+            android:scaleY="2.8"
+            android:thumbTint="@color/red"
+            android:progressBackgroundTintMode="add"
+            android:progressTint="@color/red"
+            android:splitTrack="false">
+
         </SeekBar>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
