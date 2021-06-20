@@ -20,7 +20,7 @@ import com.example.testproject.view_model.FirstScreenViewModel
 import com.google.android.material.snackbar.Snackbar
 
 
-
+// FirstScreenActivity - where the user is trying to connect to flight fear
 class FirstScreenActivity : AppCompatActivity() {
 
     private var mdb: ViewDataBinding? = null
@@ -30,11 +30,12 @@ class FirstScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initializeViewBinding()
+        initializeViewBinding() // initialize the data binding
         connectButton = findViewById<Button>(R.id.connectButton)
-        connectButton?.setOnClickListener { connectToFlightGear() }
+        connectButton?.setOnClickListener { connectToFlightGear() } // set click listener for button
     }
 
+    // initialize the data binding between the view and the view-model
     private fun initializeViewBinding() {
         mdb = DataBindingUtil.setContentView(this, R.layout.first_screen)
         myViewModel = if (!::myViewModel.isInitialized) ViewModelProvider(this).get(FirstScreenViewModel::class.java) else myViewModel
@@ -42,30 +43,31 @@ class FirstScreenActivity : AppCompatActivity() {
         mdb?.executePendingBindings()
     }
 
-
+    // when the connect button will be pressed
     private fun connectToFlightGear() {
         try {
-            val isProcessSuccess = myViewModel.connectClicked(socketHandle)
-            if (isProcessSuccess == true) {
+            val isProcessSuccess = myViewModel.connectClicked(socketHandle) // trying to connect
+            // and isProcessSuccess will hold the data if the connection succeeded or not
+            if (isProcessSuccess == true) { // if connection success
                 val intent = Intent(this, MainActivity::class.java).apply {
                     putExtra("socket", socketHandle)
                 }
-                startActivity(intent)
-            } else {
+                startActivity(intent) // start new activity (MainActivity) and pass the socketHandle
+            } else { // if connection failed
                 val hideKeyboard: InputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-                if (hideKeyboard.isActive)
+                if (hideKeyboard.isActive) // hide the keyboard
                     hideKeyboard.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0)
                 val snackBar: Snackbar = Snackbar.make(findViewById(R.id.layoutID),"Fail to connect! Check your IP / PORT", Snackbar.LENGTH_LONG)
                 snackBar.setTextColor(Color.RED)
-                snackBar.show()
+                snackBar.show() // pop message that connection failed
             }
-        } catch (e : Exception) {
+        } catch (e : Exception) { // connection failed
             val hideKeyboard: InputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-            if (hideKeyboard.isActive)
+            if (hideKeyboard.isActive) // hide the keyboard
                 hideKeyboard.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0)
             val snackBar: Snackbar = Snackbar.make(findViewById(R.id.layoutID),"Fail to connect! Check your IP / PORT", Snackbar.LENGTH_LONG)
             snackBar.setTextColor(Color.RED)
-            snackBar.show()
+            snackBar.show() // pop message that connection failed
         }
     }
 }

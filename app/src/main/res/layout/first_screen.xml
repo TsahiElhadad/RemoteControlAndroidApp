@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
 
@@ -10,61 +11,78 @@
             type="com.example.testproject.view_model.FirstScreenViewModel"/>
     </data>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/layoutID"
-        tools:context=".view.MainActivity"
-        android:background="@drawable/image1">
+        android:background="@drawable/image1"
+        app:layout_constraintBottom_toTopOf="@+id/IP_ID"
+        app:layout_constraintTop_toTopOf="@+id/IP_ID"
+        tools:context=".view.MainActivity">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/textView"
+            android:layout_width="411dp"
             android:layout_height="wrap_content"
-            android:text="WELCOME!"
+            android:layout_marginTop="68dp"
             android:gravity="center"
+            android:text="WELCOME!"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="50sp"
             android:textStyle="bold"
-            android:textColor="@color/cardview_dark_background"
-            android:layout_marginTop="80dp">
-        </TextView>
+            app:layout_constraintBottom_toTopOf="@+id/IP_ID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.031"
+            tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/IP_ID"
-            android:layout_width="match_parent"
+            android:layout_width="411dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:hint="IP"
+            android:layout_marginBottom="20dp"
+            android:background="@color/teal_700"
             android:gravity="center"
+            android:hint="IP"
             android:inputType="text"
-            android:textSize="30sp"
             android:maxLength="20"
             android:text="@={firstscreenviewmodel.iP}"
-            android:background="@color/teal_700"/>
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/PORT_ID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/PORT_ID"
-            android:layout_width="match_parent"
+            android:layout_width="411dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:hint="PORT"
+            android:layout_marginBottom="236dp"
+            android:background="@color/teal_700"
             android:gravity="center"
+            android:hint="PORT"
             android:inputType="text"
-            android:textSize="30sp"
             android:maxLength="10"
             android:text="@={firstscreenviewmodel.pORT}"
-            android:background="@color/teal_700"/>
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/connectButton"
-            android:layout_width="250dp"
-            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginBottom="136dp"
+            android:backgroundTint="@color/purple_500"
             android:text="connect"
-            android:textSize="22sp"
             android:textColor="@color/LimeGreen"
-            android:backgroundTint="@color/purple_500"/>
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
